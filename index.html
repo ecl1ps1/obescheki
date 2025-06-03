@@ -7,7 +7,7 @@
     <title>ЗАО "Обе щеки" - Карамельная продукция</title>
     <style>
     * {
-        box-sizing: border-box; /* Это важно для правильного расчета размеров */
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
@@ -18,8 +18,8 @@
         color: #333;
         text-align: center;
         width: 100%;
-        overflow-x: hidden; /* Скрывает горизонтальный скролл */
-        max-width: 100vw; /* Ограничивает максимальную ширину */
+        overflow-x: hidden;
+        max-width: 100vw;
     }
     
     header, nav, footer {
@@ -42,11 +42,11 @@
         margin: 0 15px;
         text-decoration: none;
         font-weight: bold;
-        display: inline-block; /* Для лучшего контроля */
+        display: inline-block;
     }
     
     .logo, .director, .team-photo {
-        max-width: 50%; /* Адаптивные изображения */
+        max-width: 50%;
         height: auto;
         border-radius: 10px;
         margin: 20px auto;
@@ -76,22 +76,89 @@
         transition: opacity 1s ease-in-out;
     }
     
+    .products {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        margin: 10px;
+        height: 150px;
+        padding: 10px;
+        background-color: #ffe4e1;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        
+    }
+    
+    .product:hover {
+        transform: scale(1.05);
+    }
+    
+    .sales-forecast {
+        margin: 20px 0;
+    }
+    
+    .review {
+        background-color: #ffe4e1;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+    
+    .review-form {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #ffe4e1;
+        border-radius: 10px;
+    }
+    
+    .review-form input, .review-form textarea {
+        width: 80%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .review-form button {
+        padding: 10px 20px;
+        background-color: #ff6347;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .review-form button:hover {
+        background-color: #ff8c69;
+    }
+    
     footer {
         background-color: #ff6347;
         color: white;
         padding: 10px;
-        position: relative; /* Изменено с fixed/bottom если было */
+        position: relative;
     }
 
-    /* Медиа-запрос для мобильных устройств */
     @media (max-width: 768px) {
         nav a {
-            margin: 0 10px; /* Уменьшаем отступы */
-            font-size: 14px; /* Уменьшаем размер шрифта */
+            margin: 0 10px;
+            font-size: 14px;
         }
         
         .content {
-            padding: 10px; /* Уменьшаем отступы */
+            padding: 10px;
+        }
+        
+        .product {
+            width: 150px;
         }
     }
 </style>
@@ -104,6 +171,7 @@
     <nav>
         <a href="index.html">Главная</a>
         <a href="team.html">Наша команда</a>
+        <a href="about.html">О компании</a>
     </nav>
     <div class="content">
         <img src="./images/logo.png" alt="Логотип ЗАО Обе щеки" class="logo">
@@ -122,14 +190,47 @@
         </div>
         <h2>Наша продукция</h2>
         <p>Мы производим разнообразные карамельные изделия:</p>
-        <ul style="list-style: none; padding: 0;">
-            <li>Леденцы на палочке («Обе щеки» классические)</li>
-            <li>Леденцы с начинкой (жевательная карамель, фруктовое пюре)</li>
-            <li>Леденцы с витаминами</li>
-            <li>Карамельные букеты (подарочные наборы)</li>
-            <li>Чупа-чупсы с игрушками</li>
-            <li>Упаковка индивидуальная и подарочная</li>
-        </ul>
+        <div class="products">
+            <div class="product">
+                <h3>Леденцы классические</h3>
+                <p>Цена: 0.3 BYN</p>
+            </div>
+            <div class="product">
+                <h3>Леденцы с начинкой</h3>
+                <p>Цена: 0.4 BYN</p>
+            </div>
+            <div class="product">
+                <h3>Чупа-чупсы с игрушками</h3>
+                <p>Цена: 0.7 BYN</p>
+            </div>
+        </div>
+        <h2>Прогноз продаж</h2>
+        <div class="sales-forecast">
+            <p>Прогнозируемые объемы производства после расширения:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li>Леденцы классические: 500,000 шт./мес.</li>
+                <li>Леденцы с начинкой: 300,000 шт./мес.</li>
+                <li>Чупа-чупсы с игрушками: 200,000 шт./мес.</li>
+            </ul>
+            <p>Ожидаемая прибыль: ~270,000 BYN/мес. после выхода на полную мощность.</p>
+        </div>
+        <h2>Отзывы клиентов</h2>
+        <div id="reviews-container">
+            <div class="review">
+                <p>"Лучшие леденцы в Бресте! Дети в восторге, а я ценю натуральные ингредиенты." — Анна</p>
+            </div>
+            <div class="review">
+                <p>"Чупа-чупсы с игрушками — хит на детских праздниках! Качество супер!" — Сергей</p>
+            </div>
+        </div>
+        <h2>Оставить отзыв</h2>
+        <div class="review-form">
+            <form id="review-form" onsubmit="handleReviewSubmit(event)">
+                <input type="text" name="name" placeholder="Ваше имя" required><br>
+                <textarea name="review" placeholder="Ваш отзыв" rows="4" required></textarea><br>
+                <button type="submit">Отправить отзыв</button>
+            </form>
+        </div>
         <h2>Директор</h2>
         <img src="./images/director.png" alt="Директор ЗАО Обе щеки" class="director">
         <p>Ипполитов Александр Олегович ведет компанию к новым сладким вершинам!</p>
@@ -137,6 +238,7 @@
     <footer>
         <p>© 2025 ЗАО "Обе щеки". Все права защищены.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const slogans = document.querySelectorAll('.slogan');
         let currentSlogan = 0;
@@ -149,6 +251,30 @@
 
         slogans[currentSlogan].style.opacity = '1';
         setInterval(showNextSlogan, 3000);
+
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('review-form');
+            const name = form.querySelector('input[name="name"]').value;
+            const review = form.querySelector('textarea[name="review"]').value;
+            const reviewsContainer = document.getElementById('reviews-container');
+
+            if (reviewsContainer) {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review';
+                reviewDiv.innerHTML = `<p>"${review}" — ${name}</p>`;
+                reviewsContainer.appendChild(reviewDiv);
+                form.reset();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Спасибо!',
+                    text: 'Ваш отзыв успешно добавлен.',
+                    confirmButtonText: 'OK'
+                });
+            } else {
+                console.error('Reviews container not found!');
+            }
+        }
     </script>
 </body>
 </html>
