@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
+    <title>ЗАО "Обе щеки" - Карамельная продукция</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #ff6347;
+            padding: 20px;
+            color: white;
+        }
+        nav {
+            background-color: #ff8c69;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 20px auto;
+        }
+        .director, .team-photo {
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .team-member {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #ffe4e1;
+            border-radius: 10px;
+        }
+        .slogan {
+            font-style: italic;
+            color: #ff6347;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        footer {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ЗАО "Обе щеки"</h1>
+        <p>Вкусная карамель для всех!</p>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="team.html">Наша команда</a>
+    </nav>
+    <div class="content">
+        <img src="./images/logo.png" alt="Логотип ЗАО Обе щеки" class="logo">
+        <h2>О нас</h2>
+        <p>Мы рады представить вам нашу карамельную продукцию, созданную с любовью и заботой. ЗАО "Обе щеки" — это традиция вкуса и качества с 1996 года.</p>
+        <p>Юридический адрес: 224005, г. Брест, ул. Карла Маркса 88.<br>
+        Телефон: 8 (0162) 123-456</p>
+        <h2>Наши девизы</h2>
+        <div id="slogan-container">
+            <p class="slogan">"Качество – наше кредо. Маржа – наше всё"</p>
+            <p class="slogan">"Работаешь за обе щеки – получаешь по полной"</p>
+            <p class="slogan">"Хочешь быть богатым? Начни с малого — купи килограмм наших леденцов."</p>
+            <p class="slogan">"Ты можешь не любить нас. Но ты будешь."</p>
+            <p class="slogan">"Ты можешь убежать от долгов, но не от вкуса наших леденцов."</p>
+            <p class="slogan">"Попробуешь наши леденцы — будешь стучаться ко мне сам."</p>
+        </div>
+        <h2>Наша продукция</h2>
+        <p>Мы производим разнообразные карамельные изделия:</p>
+        <ul style="list-style: none; padding: 0;">
+            <li>Леденцы на палочке («Обе щеки» классические)</li>
+            <li>Леденцы с начинкой (жевательная карамель, фруктовое пюре)</li>
+            <li>Леденцы с витаминами</li>
+            <li>Карамельные букеты (подарочные наборы)</li>
+            <li>Чупа-чупсы с игрушками</li>
+            <li>Упаковка индивидуальная и подарочная</li>
+        </ul>
+        <h2>Директор</h2>
+        <img src="./images/director.png" alt="Директор ЗАО Обе щеки" class="director">
+        <p>Ипполитов Александр Олегович ведет компанию к новым сладким вершинам!</p>
+    </div>
+    <footer>
+        <p>© 2025 ЗАО "Обе щеки". Все права защищены.</p>
+    </footer>
+    <script>
+        const slogans = document.querySelectorAll('.slogan');
+        let currentSlogan = 0;
+
+        function showNextSlogan() {
+            slogans[currentSlogan].style.opacity = '0';
+            currentSlogan = (currentSlogan + 1) % slogans.length;
+            slogans[currentSlogan].style.opacity = '1';
+        }
+
+        slogans[currentSlogan].style.opacity = '1';
+        setInterval(showNextSlogan, 3000);
+    </script>
+</body>
+</html>
