@@ -55,9 +55,10 @@
     
     .content {
         width: 100%;
-        max-width: 800px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 20px;
+        overflow-x: hidden; /* Дополнительно предотвращаем скролл */
     }
     
     .team-member {
@@ -78,8 +79,8 @@
     
     .products {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap; /* Добавляем перенос на маленьких экранах */
     }
 
     .product {
@@ -88,13 +89,11 @@
         justify-content: center;
         align-items: center;
         width: 200px;
-        margin: 10px;
         height: 150px;
         padding: 10px;
         background-color: #ffe4e1;
         border-radius: 10px;
         transition: transform 0.3s ease;
-        
     }
     
     .product:hover {
@@ -157,8 +156,22 @@
             padding: 10px;
         }
         
+        .products {
+            gap: 5px; /* Уменьшаем расстояние между продуктами */
+        }
+        
         .product {
-            width: 150px;
+            width: 140px; /* Уменьшаем ширину для мобильных */
+            height: 120px; /* Уменьшаем высоту */
+            font-size: 0.9em; /* Уменьшаем шрифт для текста */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product {
+            width: 120px; /* Ещё меньше для очень маленьких экранов */
+            height: 100px;
+            font-size: 0.8em;
         }
     }
 </style>
